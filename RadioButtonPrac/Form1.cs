@@ -17,6 +17,7 @@ namespace RadioButtonPrac
       InitializeComponent();
 
       textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+
       
     }
 
@@ -27,20 +28,28 @@ namespace RadioButtonPrac
 
     private void textBox1_TextChanged(object sender, EventArgs e)
     {
-      
-      lbl_TextChange.Text = String.Format("{0}", textBox1.Text);
+
+      lbl_TextChange.Text = textBox1.Text;
     }
 
     private void radioButton1_CheckedChanged(object sender, EventArgs e)
     {
       pictureBox1.Visible = true;
-      pictureBox1.Load("strat.jpg");
+      pictureBox1.Image = Properties.Resources.strat;
+      img_TextBox.Visible = false;
+      img_TextBox.BackColor = Color.White;
+      img_TextBox.BorderStyle = BorderStyle.None;
+      img_TextBox.Text = "Name: strat.jpg, Type: jpg, Size: 4KB";
     }
 
     private void radioButton2_CheckedChanged(object sender, EventArgs e)
     {
       pictureBox1.Visible = true;
-      pictureBox1.Load("les_paul.jpg");
+      pictureBox1.Image = Properties.Resources.les_paul;
+      img_TextBox.Visible = false;
+      img_TextBox.BackColor = Color.White;
+      img_TextBox.BorderStyle = BorderStyle.None;
+      img_TextBox.Text = "Name: les_paul.jpg, Type: jpg, Size: 4KB";
     }
 
     private void radioButton5_CheckedChanged(object sender, EventArgs e)
@@ -51,18 +60,27 @@ namespace RadioButtonPrac
     private void Form1_Load(object sender, EventArgs e)
     {
       pictureBox1.Visible = false;
+      img_TextBox.Visible = false;
     }
 
     private void radioButton3_CheckedChanged(object sender, EventArgs e)
     {
       pictureBox1.Visible = true;
-      pictureBox1.Load("explorer.jpg");
+      pictureBox1.Image = Properties.Resources.explorer;
+      img_TextBox.Visible = false;
+      img_TextBox.BackColor = Color.White;
+      img_TextBox.BorderStyle = BorderStyle.None;
+      img_TextBox.Text = "Name: explorer.jpg, Type: jpg, Size: 4KB";
     }
 
     private void radioButton4_CheckedChanged(object sender, EventArgs e)
     {
       pictureBox1.Visible = true;
-      pictureBox1.Load("firebird.jpg");
+      pictureBox1.Image = Properties.Resources.firebird;
+      img_TextBox.Visible = false;
+      img_TextBox.BackColor = Color.White;
+      img_TextBox.BorderStyle = BorderStyle.None;
+      img_TextBox.Text = "Name: firebird.jpg, Type: jpg, Size: 4KB";
     }
 
     private void radioButton6_CheckedChanged(object sender, EventArgs e)
@@ -93,6 +111,26 @@ namespace RadioButtonPrac
     private void rb_NormalCase_CheckedChanged(object sender, EventArgs e)
     {
       lbl_TextChange.Text = textBox1.Text;
+    }
+
+    private void toolTip1_Popup(object sender, PopupEventArgs e)
+    {
+     
+    }
+
+    private void pictureBox1_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void pictureBox1_MouseEnter(object sender, EventArgs e)
+    {
+      img_TextBox.Visible = true;
+    }
+
+    private void pictureBox1_MouseLeave(object sender, EventArgs e)
+    {
+      img_TextBox.Visible = false;
     }
   }
 }
